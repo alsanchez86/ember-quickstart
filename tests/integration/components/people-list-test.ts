@@ -7,21 +7,8 @@ module('Integration | Component | people-list', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.set('myAction', function(val) { ... });
+    await render(hbs`<PeopleList @title='Title' />`);
 
-    await render(hbs`‹PeopleList @title='Title' /›`);
-
-    // assert.equal(this?.element?.textContent, 'Title');
     assert.dom('h2').containsText('Title');
-
-    // // Template block usage:
-    // await render(hbs`
-    //   {{#people-list}}
-    //     template block text
-    //   {{/people-list}}
-    // `);
-
-    // assert.equal(this?.element?.textContent?.trim(), 'template block text');
   });
 });
