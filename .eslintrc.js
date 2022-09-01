@@ -1,25 +1,36 @@
 'use strict';
 
 module.exports = {
+  globals: {
+    server: true,
+  },
   root: true,
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
+    requireConfigFile: false,
     ecmaVersion: 2018,
     sourceType: 'module',
     ecmaFeatures: {
       legacyDecorators: true,
     },
+    babelOptions: {
+      assumptions: {
+        setPublicClassFields: true,
+      },
+      plugins: [
+        ['@babel/plugin-proposal-decorators', { legacy: true }],
+        ['@babel/plugin-proposal-class-properties'],
+      ],
+    },
   },
   plugins: ['ember'],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'plugin:prettier/recommended',
-  ],
+  extends: ['eslint:recommended', 'plugin:ember/recommended'],
   env: {
     browser: true,
   },
-  rules: {},
+  rules: {
+    'ember/no-jquery': 'error',
+  },
   overrides: [
     // node files
     {
@@ -53,6 +64,13 @@ module.exports = {
       // test files
       files: ['tests/**/*-test.{js,ts}'],
       extends: ['plugin:qunit/recommended'],
+    },
+    // mirage files
+    {
+      files: ['mirage/**'],
+      rules: {
+        'ember/avoid-leaking-state-in-ember-objects': 'off',
+      },
     },
   ],
 };
