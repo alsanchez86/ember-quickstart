@@ -30,3 +30,6 @@
 
 # broccoli-debug
 /DEBUG/
+
+# others
+.DS_Store
