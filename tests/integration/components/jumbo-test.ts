@@ -7,8 +7,10 @@ module('Integration | Component | jumbo', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    await render(hbs`<Jumbo>Hello world!</Jumbo>`);
+    await render(hbs`<Jumbo>Hello world</Jumbo>`);
 
-    assert.dom().containsText('Hello world!');
+    assert.dom('.jumbo').exists();
+    assert.dom('.jumbo').hasText('Hello World');
+    assert.dom('.jumbo .tomster').exists();
   });
 });
