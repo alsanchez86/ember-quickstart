@@ -7,6 +7,7 @@ export default class Router extends EmberRouter {
 }
 
 Router.map(function () {
+  // Its not neccesary to put a route to index lading page (route '/')
   this.route('scientists');
   this.route('about');
   this.route('contact', { path: '/getting-in-touch' });

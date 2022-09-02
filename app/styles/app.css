@@ -80,9 +80,6 @@ p {
 
 .menu {
   height: 4em;
-  background-color: #677ae4;
-  background-color: #05526a;
-  background-color: #e46855;
 }
 
 .menu h1 {
@@ -189,35 +186,6 @@ p {
 
 .body {
   padding: 15px;
-}
-/**
- * Similar to Jumbotron
- */
-
-.jumbo {
-  padding: 50px;
-  background: #f6f6f6;
-}
-
-.jumbo:hover {
-  background-color: #f3f3f3;
-}
-
-.jumbo h2 {
-  font-size: 3.2em;
-  margin-top: -25px;
-}
-
-.jumbo p,
-.jumbo address {
-  margin-bottom: 25px;
-}
-
-.jumbo img {
-  height: 200px;
-  position: relative;
-  top: -25px;
-  right: -20px;
 }
 
 /**
