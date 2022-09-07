@@ -7,7 +7,7 @@ interface RentalImageArgs {}
 export default class RentalImage extends Component<RentalImageArgs> {
   @tracked isLarge = false;
 
-  constructor(owner: any, args: any) {
+  constructor(owner: any, args: RentalImageArgs) {
     super(owner, args);
     this.isLarge = false;
   }
