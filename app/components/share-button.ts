@@ -1,4 +1,5 @@
 import Component from '@glimmer/component';
+import { service } from '@ember/service';
 import { TWEET_INTENT } from 'ember-quickstart/constants';
 
 interface ShareButtonComponentArgs {
@@ -8,14 +9,16 @@ interface ShareButtonComponentArgs {
 }
 
 export default class ShareButtonComponent extends Component<ShareButtonComponentArgs> {
+  @service router: any;
+
   get currentURL() {
-    return window.location.href;
+    return new URL(this.router.currentURL, window.location.origin);
   }
 
   get shareURL() {
     let url = new URL(TWEET_INTENT);
 
-    url.searchParams.set('url', this.currentURL);
+    url.searchParams.set('url', this.currentURL.href);
 
     if (this.args.text) {
       url.searchParams.set('text', this.args.text);
