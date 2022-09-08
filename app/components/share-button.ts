@@ -3,9 +3,9 @@ import { service } from '@ember/service';
 import { TWEET_INTENT } from 'ember-quickstart/constants';
 
 interface ShareButtonComponentArgs {
-  readonly text: string;
-  readonly hashtags: string;
-  readonly via: string;
+  text: string;
+  hashtags: string;
+  via: string;
 }
 
 export default class ShareButtonComponent extends Component<ShareButtonComponentArgs> {

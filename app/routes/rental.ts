@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 
 interface IRentalRouteParams {
-  readonly id: string;
+  id: string;
 }
 
 export default class RentalRoute extends Route {

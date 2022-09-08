@@ -1,8 +1,6 @@
 import Route from '@ember/routing/route';
 
-export default class Scientists extends Route.extend({
-  // anything which *must* be merged to prototype here
-}) {
+export default class Scientists extends Route {
   model() {
     return ['1', '2', '3'];
   }
