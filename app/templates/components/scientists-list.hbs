@@ -1,0 +1,11 @@
+<h2>{{@title}}</h2>
+
+<ul>
+  {{#each @scientists as |scientist|}}
+    <li>
+      <button type='button' {{on 'click' (fn this.showScientist scientist)}}>
+        {{scientist.firstName}}
+      </button>
+    </li>
+  {{/each}}
+</ul>
