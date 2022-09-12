@@ -26,6 +26,7 @@ export default class ScientistSerializer extends JSONAPISerializer {
         subjects: scientist.subjects,
       },
     }));
+
     const payloadOutput = {
       data,
     };

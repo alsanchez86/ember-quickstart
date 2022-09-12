@@ -7,7 +7,7 @@ module('Integration | Component | people-list', function (hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function (assert) {
-    await render(hbs`<PeopleList @title='Title' />`);
+    await render(hbs`<ScientistsList @title='Title' />`);
 
     assert.dom('h2').containsText('Title');
   });
